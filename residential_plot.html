@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #87CEEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .plot-container {
+            width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, #228B22 0%, #32CD32 50%, #228B22 100%);
+            border: 5px solid #8B4513;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .house-outline {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 80px;
+            background: transparent;
+            border: 3px solid #8B4513;
+            border-radius: 5px;
+        }
+        .roof {
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            width: 140px;
+            height: 40px;
+            background: #8B4513;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+        .door {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 40px;
+            background: #654321;
+            border-radius: 2px 2px 0 0;
+        }
+        .window {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #87CEEB;
+            border: 2px solid #654321;
+            border-radius: 2px;
+        }
+        .window1 {
+            top: 20px;
+            left: 20px;
+        }
+        .window2 {
+            top: 20px;
+            right: 20px;
+        }
+        .plot-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.9);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        .trees {
+            position: absolute;
+            font-size: 30px;
+            color: #228B22;
+        }
+        .tree1 { top: 20px; left: 30px; }
+        .tree2 { top: 40px; right: 40px; }
+        .tree3 { bottom: 60px; left: 50px; }
+    </style>
+</head>
+<body>
+    <div class="plot-container">
+        <div class="trees tree1">🌳</div>
+        <div class="trees tree2">🌲</div>
+        <div class="trees tree3">🌳</div>
+        <div class="house-outline">
+            <div class="roof"></div>
+            <div class="door"></div>
+            <div class="window window1"></div>
+            <div class="window window2"></div>
+        </div>
+        <div class="plot-label">RESIDENTIAL PLOT</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOMES - Construction </title>
+  <style>
+    
+    :root {
+      --primary-black: #000000;
+      --dark-blue: #001a33;
+      --medium-blue: #003366;
+      --light-blue: #0066cc;
+      --accent-blue: #3399ff;
+      --text-white: #ffffff;
+      --card-bg: #001122;
+      --border-blue: #004488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: var(--primary-black);
+      color: var(--text-white);
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('FullLogo_Transparent (1).png') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--accent-blue);
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--light-blue);
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--medium-blue) 0%, var(--light-blue) 100%);
+      color: var(--text-white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 102, 204, 0.3);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: var(--text-white);
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: var(--text-white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-white);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 102, 204, 0.2);
+      border: 1px solid var(--border-blue);
+    }
+
+    section h2 {
+      margin-bottom: 1.5rem;
+      color: var(--text-white);
+      border-bottom: 3px solid var(--light-blue);
+      padding-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-blue);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(51, 153, 255, 0.3);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border: 2px solid var(--light-blue);
+    }
+
+    .card h3 {
+      color: var(--text-white);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: var(--text-white);
+      line-height: 1.5;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form label {
+      font-weight: 600;
+      color: var(--text-white);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    form input, form textarea, form select {
+      padding: 0.8rem;
+      background: var(--card-bg);
+      border: 2px solid var(--border-blue);
+      border-radius: 6px;
+      font-size: 1rem;
+      color: var(--text-white);
+      width: 100%;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus, form select:focus {
+      outline: none;
+      border-color: var(--light-blue);
+      box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+    }
+
+    form button {
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--accent-blue) 100%);
+      color: var(--text-white);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    form button:hover {
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--light-blue) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(51, 153, 255, 0.4);
+    }
+
+    .founders {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .founder-card {
+      background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      width: 280px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-blue);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .founder-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .founder-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      border: 3px solid var(--light-blue);
+    }
+
+    .founder-card h3 {
+      color: var(--text-white);
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .founder-card p {
+      color: var(--text-white);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--medium-blue) 0%, var(--dark-blue) 100%);
+      color: var(--text-white);
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      border-top: 2px solid var(--light-blue);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      
+      .founders {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark-blue);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--light-blue);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="FullLogo_Transparent.png" alt="Domes Logo" style="height: 120px; width: 120px; filter: brightness(0) invert(1);">
+      <h1>DOMES</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#land">Land & Plots</a></li>
+        <li><a href="#truck-services">Truck Services</a></li>
+        <li><a href="#jobs">Job Opportunities</a></li>
+        <li><a href="#constructors">Constructors</a></li>
+        <li><a href="#founders">Founders</a></li>
+      </ul>
+      <div style="margin-left: 1rem; display: flex; gap: 1rem;">
+        <button id="loginBtn" style="background: var(--accent-blue); border: none; color: var(--text-white); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Login</button>
+        <button id="signupBtn" style="background: var(--light-blue); border: none; color: var(--text-white); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Sign Up</button>
+      </div>
+    </nav>
+  </header>
+
+  
+  <div id="loginModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 10000;">
+    <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; width: 320px; box-shadow: 0 0 15px var(--accent-blue); position: relative;">
+      <h2 style="color: var(--text-white); margin-bottom: 1rem;">Login</h2>
+      <form id="loginForm">
+        <label for="loginEmail" style="color: var(--text-white); font-weight: 600;">Email</label>
+        <input type="email" id="loginEmail" name="loginEmail" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 6px; border: 1px solid var(--border-blue); background: var(--card-bg); color: var(--text-white);">
+        <label for="loginPassword" style="color: var(--text-white); font-weight: 600;">Password</label>
+        <input type="password" id="loginPassword" name="loginPassword" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 6px; border: 1px solid var(--border-blue); background: var(--card-bg); color: var(--text-white);">
+        <button type="submit" style="width: 100%; padding: 0.7rem; background: var(--accent-blue); border: none; color: var(--text-white); border-radius: 6px; cursor: pointer; font-weight: 600;">Login</button>
+      </form>
+      <button id="closeLogin" style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; color: var(--text-white); font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+  </div>
+
+  
+  <div id="signupModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 10000;">
+    <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; width: 320px; box-shadow: 0 0 15px var(--accent-blue); position: relative;">
+      <h2 style="color: var(--text-white); margin-bottom: 1rem;">Sign Up</h2>
+      <form id="signupForm">
+        <label for="signupEmail" style="color: var(--text-white); font-weight: 600;">Email</label>
+        <input type="email" id="signupEmail" name="signupEmail" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 6px; border: 1px solid var(--border-blue); background: var(--card-bg); color: var(--text-white);">
+        <label for="signupPassword" style="color: var(--text-white); font-weight: 600;">Password</label>
+        <input type="password" id="signupPassword" name="signupPassword" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 6px; border: 1px solid var(--border-blue); background: var(--card-bg); color: var(--text-white);">
+        <label for="signupConfirmPassword" style="color: var(--text-white); font-weight: 600;">Confirm Password</label>
+        <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 6px; border: 1px solid var(--border-blue); background: var(--card-bg); color: var(--text-white);">
+        <button type="submit" style="width: 100%; padding: 0.7rem; background: var(--light-blue); border: none; color: var(--text-white); border-radius: 6px; cursor: pointer; font-weight: 600;">Sign Up</button>
+      </form>
+      <button id="closeSignup" style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; color: var(--text-white); font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+  </div>
+
+  <script>
+    
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginModal = document.getElementById('loginModal');
+    const signupModal = document.getElementById('signupModal');
+    const closeLogin = document.getElementById('closeLogin');
+    const closeSignup = document.getElementById('closeSignup');
+
+    loginBtn.addEventListener('click', () => {
+      loginModal.style.display = 'flex';
+    });
+
+    signupBtn.addEventListener('click', () => {
+      signupModal.style.display = 'flex';
+    });
+
+    closeLogin.addEventListener('click', () => {
+      loginModal.style.display = 'none';
+    });
+
+    closeSignup.addEventListener('click', () => {
+      signupModal.style.display = 'none';
+    });
+
+    
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Login submitted for ' + e.target.loginEmail.value);
+      loginModal.style.display = 'none';
+      e.target.reset();
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const password = e.target.signupPassword.value;
+      const confirmPassword = e.target.signupConfirmPassword.value;
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      alert('Signup submitted for ' + e.target.signupEmail.value);
+      signupModal.style.display = 'none';
+      e.target.reset();
+    });
+  </script>
+  <main>
+    <section id="materials">
+      <h2>MATERIALS FOR SALE</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://i.ibb.co/4gZbGKJ3/cement-png.png" alt="cement-png" border="0" />
+          <h3>Cement</h3>
+          <p>High quality cement for all construction needs.</p>
+        </div>
+        <div class="card">
+          <img src="https://i.ibb.co/tTtZtg5F/bricks-png.png" alt="bricks-png" border="0"/>
+          <h3>Bricks</h3>
+          <p>Durable and strong bricks for building foundations.</p>
+        </div>
+        <div class="card">
+          <img src="https://i.ibb.co/mrNnfd6S/steel-png.png" alt="steel-png" border="0" />
+          <h3>Steel Rods</h3>
+          <p>Reinforced steel rods for structural support.</p>
+        </div>
+      </div>
+    </section>
+    <section id="land">
+      <h2>LAND & PLOT FOR SALE</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://i.ibb.co/8nPQKcmp/residentialpic.png" alt="residentialpic" border="0" />
+          <h3>Residential Plot</h3>
+          <p>Spacious residential plots in prime locations.</p>
+        </div>
+        <div class="card">
+          <img src="https://i.ibb.co/R4V721FD/commercial-land-png.png" alt="commercial-land-png" border="0" />
+          <h3>Commercial Land</h3>
+          <p>Perfect land for commercial development.</p>
+        </div>
+        <div class="card">
+          <img src="https://i.ibb.co/5WP2YrB5/industrial-plot-png.png" alt="industrial-plot-png" border="0" />
+          <h3>Industrial Plot</h3>
+          <p>Ideal for factories and warehouses.</p>
+        </div>
+      </div>
+    </section>
+    <section id="truck-services">
+      <h2>TRUCK & JCB SERVICES</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=400&q=80" alt="Truck Service" />
+          <h3>Truck Services</h3>
+          <p>Reliable truck services for material transport.</p>
+        </div>
+        <div class="card">
+          <img src="https://i.ibb.co/YFD70KFS/jcb-png.png" alt="jcb-png" border="0"/>
+          <h3>JCB Services</h3>
+          <p>Efficient JCB services for construction and demolition.</p>
+        </div>
+      </div>
+    </section>
+    <section id="constructors">
+      <h2>Our Expert Constructors</h2>
+      <div class="founders">
+        <div class="founder-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Senior Constructor" />
+          <h3>Rajesh Kumar</h3>
+          <p>Master Constructor with 15+ years experience in residential and commercial projects</p>
+        </div>
+        <div class="founder-card">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Civil Engineer" />
+          <h3>Vikram Singh</h3>
+          <p>Lead Civil Engineer specializing in structural design and project management</p>
+        </div>
+        <div class="founder-card">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Site Supervisor" />
+          <h3>Amit Sharma</h3>
+          <p>Senior Site Supervisor ensuring quality construction and timely completion</p>
+        </div>
+      </div>
+    </section>
+    <section id="jobs">
+      <h2>Job Opportunities</h2>
+      <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem;">
+        Looking for talented individuals to join our construction team! 
+<br><a href="view-applications.html" style="color: #3399ff; font-weight: bold;">Click here to apply →</a>
+      </p>
+      
+      
+      <div id="applicationStatus" style="background: linear-gradient(135deg, #001122 0%, #003366 100%); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #0066cc;">
+        <h3 style="text-align: center; color: #3399ff; margin-bottom: 15px;">Application Status</h3>
+        <div id="statusContent" style="text-align: center; color: #fff;">
+          <p>Loading applications...</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center;">
+        <a href="view-applications.html" style="color: #3399ff; text-decoration: none;">View All Applications</a>
+      </div>
+    </section>
+
+    <section id="founders">
+      <h2>Founders</h2>
+      <div class="founders">
+        <div class="founder-card">
+          <img src="WhatsApp Image 2025-08-04 at 21.54.05_0dcfda17.jpg" alt="Aadil Muhammed" />
+          <h3>Aadil Muhammed</h3>
+        </div>
+        <div class="founder-card">
+          <img src="WhatsApp Image 2025-08-04 at 21.54.13_5e6a976d.jpg" alt="Deepak Pradeep" />
+          <h3>Deepak Pradeep</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Domes. All rights reserved.</p>
+    <div style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #001122 0%, #003366 100%); border-radius: 10px; border: 2px solid #0066cc;">
+      <h3 style="color: #3399ff; margin-bottom: 15px;">Contact & Support</h3>
+      <p style="margin: 5px 0;">
+        <strong>Helpline Numbers:</strong><br>
+        <a href="tel:9400694874" style="color: #fff;">9400694874</a><br>
+        <a href="tel:7510312745" style="color: #fff;">7510312745</a>
+      </p>
+      <p style="margin: 5px 0;">
+        <strong>Email:</strong><br>
+        <a href="mailto:domesworld@gmail.com" style="color: #fff;">domesworld@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="quoteModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 26, 51, 0.95); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 1; transition: opacity 0.5s ease;">
+    <div style="background: linear-gradient(135deg, #001122 0%, #003366 100%); padding: 3rem; border-radius: 12px; max-width: 600px; text-align: center; box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3); border: 2px solid #0066cc;">
+      <h2 style="color: #ffffff; margin-bottom: 1rem;">Inspiring Construction Quote</h2>
+      <p id="quoteText" style="font-size: 1.5rem; color: #ffffff; margin-bottom: 2rem; font-style: italic;">
+        "Every great building begins with a single brick. We don't just construct buildings, we build dreams that stand the test of time."
+      </p>
+      <button onclick="closeQuoteModal()" style="background: linear-gradient(135deg, #0066cc 0%, #3399ff 100%); color: white; border: none; padding: 0.8rem 2rem; border-radius: 6px; cursor: pointer; font-size: 1.1rem; transition: all 0.3s ease;">Continue to Website</button>
+    </div>
+  </div>
+
+  <script>
+    const constructionQuotes = [
+      "Every great building begins with a single brick. We don't just construct buildings, we build dreams that stand the test of time.",
+      "Architecture is a visual art, and the buildings speak for themselves through quality construction and attention to detail.",
+      "The foundation of every great structure is built on trust, quality materials, and expert craftsmanship.",
+      "We shape our buildings; thereafter they shape our lives and communities for generations to come.",
+      "Construction is not just about erecting walls and roofs, it's about creating spaces where memories are made.",
+      "From blueprints to reality, every measurement matters, every detail counts in building excellence."
+    ];
+
+  
+    window.addEventListener('load', function() {
+      const randomQuote = constructionQuotes[Math.floor(Math.random() * constructionQuotes.length)];
+      document.getElementById('quoteText').textContent = `"${randomQuote}"`;
+      
+      
+      setTimeout(closeQuoteModal, 5000);
+    });
+
+    function closeQuoteModal() {
+      const modal = document.getElementById('quoteModal');
+      modal.style.opacity = '0';
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 500);
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      alert('Thank you for your application, ' + form.name.value + '! We will get back to you soon.');
+      form.reset();
+      return false;
+    }
+
+    
+    function updateApplicationStatus() {
+      const applications = JSON.parse(localStorage.getItem('jobApplications')) || [];
+      const statusContent = document.getElementById('statusContent');
+      
+      if (applications.length === 0) {
+        statusContent.innerHTML = `
+          <p style="font-size: 1.1rem;">No applications yet</p>
+          <p style="font-size: 0.9rem; color: #ccc;">Be the first to apply!</p>
+        `;
+        return;
+      }
+      
+      
+      const positionCounts = {};
+      applications.forEach(app => {
+        positionCounts[app.position] = (positionCounts[app.position] || 0) + 1;
+      });
+      
+      let statusHTML = `
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
+          <div style="background: rgba(51, 153, 255, 0.2); padding: 10px; border-radius: 8px; min-width: 120px;">
+            <strong style="color: #3399ff;">Total</strong><br>
+            <span style="font-size: 1.5rem; font-weight: bold;">${applications.length}</span>
+          </div>
+      `;
+      
+      
+      Object.entries(positionCounts).forEach(([position, count]) => {
+        statusHTML += `
+          <div style="background: rgba(51, 153, 255, 0.2); padding: 10px; border-radius: 8px; min-width: 120px;">
+            <strong style="color: #3399ff;">${position}</strong><br>
+            <span style="font-size: 1.2rem; font-weight: bold;">${count}</span>
+          </div>
+        `;
+      });
+      
+      statusHTML += '</div>';
+      
+      
+      const recentApps = applications.slice(0, 3);
+      statusHTML += `
+        <div style="margin-top: 15px; text-align: left;">
+          <strong style="color: #3399ff;">Recent Applications:</strong>
+          <ul style="list-style: none; padding: 0; margin-top: 10px;">
+            ${recentApps.map(app => `
+              <li style="padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                ${app.fullName} - ${app.position}
+                <br><small style="color: #ccc;">${app.timestamp}</small>
+              </li>
+            `).join('')}
+          </ul>
+          ${applications.length > 3 ? `<p style="text-align: center; margin-top: 10px;"><a href="view-applications.html" style="color: #3399ff;">View all ${applications.length} applications →</a></p>` : ''}
+        </div>
+      `;
+      
+      statusContent.innerHTML = statusHTML;
+    }
+
+    
+    updateApplicationStatus();
+    setInterval(updateApplicationStatus, 30000);
+  </script>
+</body>
+</html>

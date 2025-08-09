@@ -37,20 +37,20 @@ username.github.io/repo_name
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Screenshot 2025-08-09 042638)
+![https://drive.google.com/file/d/1mL7PRzR_-6lXEPng4ZyNVt8w2rceZN6L/view?usp=drive_link](Screenshot 2025-08-09 042638)
 *Add caption explaining what this shows*
 
-![Screenshot2](Screenshot 2025-08-09 042819)
+![https://drive.google.com/file/d/17sk3cZunIHFFYF18urBqmxHBS83LhhJu/view?usp=drive_link](Screenshot 2025-08-09 042819)
 *Add caption explaining what this shows*
 
-![Screenshot3](Screenshot 2025-08-09 042922)
+![https://drive.google.com/file/d/17sk3cZunIHFFYF18urBqmxHBS83LhhJu/view?usp=drive_link](Screenshot 2025-08-09 042922)
 *Add caption explaining what this shows*
 
 
 
 ### Project Demo
 # Video
-[Screen Recording 2025-08-09 042433]
+[https://drive.google.com/file/d/1IbuUGdm62O338n8t7HEuDLaU1320LtM2/view?usp=drive_link]
 *Explain what the video demonstrates*
 
 
